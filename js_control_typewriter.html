@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typewriter</title>
+  <style>
+    div::after {
+      content: '_';
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0% { opacity: 0 }
+      50% { opacity: 1 }
+      100% { opacity: 0 }
+    }
+  </style>
+</head>
+<body>
+  <div id="typeContent"></div>
+  <script>(function(){
+    const data = "type words";
+    const container = document.getElementById("typeContent");
+    let index = 0;
+    function typing() {
+      if (index > data.length) return;
+      container.innerHTML = data.slice(0, index);
+      const timer = setTimeout(typing, 1200);
+      index++;
+    }
+    typing();
+  })()</script>
+  <!-- <script>(function(){
+    const data = "type words";
+    const container = document.getElementById("typeContent");
+    let index = 0;
+    function typing() {
+      if (index > data.length) clearInterval(timer);
+      container.innerHTML = data.slice(0, index);
+      index++;
+    }
+    const timer = setInterval(typing, 200);
+  })()</script> -->
+  <!-- <script>(function(){
+    const data = "type words";
+    const container = document.getElementById("typeContent");
+    let index = 0;
+    function typing() {
+      if (index > data.length) return;
+      container.innerHTML = data.slice(0, index);
+      const timer = requestAnimationFrame(typing, 200);
+      index++;
+    }
+    typing();
+  })()</script> -->
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typewriter</title>
+  <style>
+    div {
+      font-size: 20px;
+      width: 0;
+      height: 24px;
+      border-right: solid 1px black;
+      overflow: hidden;
+      animation: typing 4s steps(5) forwards, blink 1s infinite;
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100px }
+    }
+  </style>
+</head>
+<body>
+  <div>葡萄成熟时</div>
+</body>
+</html>
